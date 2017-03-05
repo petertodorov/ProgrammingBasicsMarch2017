@@ -1,0 +1,26 @@
+using System;
+using System.Text;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+class SquareOfStars
+{
+    static void Main()
+    {
+        int n = int.Parse(Console.ReadLine());
+        PrintBegginingOrEnd(n);
+        for (int row = 0; row < n - 2; row++)
+        {
+            Console.Write("*");
+            Console.Write(new string(' ', (n - 2)));
+            Console.WriteLine("*");
+        }
+        PrintBegginingOrEnd(n);
+    }
+    static void PrintBegginingOrEnd(int n)
+    {
+        Console.Write(new string('*', n));
+        Console.WriteLine();
+    }
+}
