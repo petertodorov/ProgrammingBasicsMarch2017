@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+class CurrencyConverter
+{
+    static void Main(string[] args)
+    {
+        decimal sum = decimal.Parse(Console.ReadLine());
+        decimal result = new decimal();
+        string inputCurrency = Console.ReadLine();
+        string outputCurrency = Console.ReadLine();
+        if (inputCurrency == "USD")
+        {
+            sum *= 1.79549M;
+            inputCurrency = "BGN";
+        }
+        else if (inputCurrency == "EUR")
+        {
+            sum *= 1.95583M;
+            inputCurrency = "BGN";
+        }
+        else if (inputCurrency == "GBP")
+        {
+            sum *= 2.53405M;
+            inputCurrency = "BGN";
+        }
+        if (inputCurrency == "BGN")
+        {
+            if (outputCurrency == "USD")
+            {
+                result = sum / 1.79549M;
+                Console.WriteLine($"{result:0.00} {outputCurrency}");
+            }
+            else if (outputCurrency == "EUR")
+            {
+                result = sum / 1.95583M;
+                Console.WriteLine($"{result:0.00} {outputCurrency}");
+            }
+            else if (outputCurrency == "GBP")
+            {
+                result = sum / 2.53405M;
+                Console.WriteLine($"{result:0.00} {outputCurrency}");
+            }
+            else if (inputCurrency == outputCurrency)
+            {
+                result = sum;
+                Console.WriteLine($"{result:0.00}");
+            }
+        }
+    }
+}
