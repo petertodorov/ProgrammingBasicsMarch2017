@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Globalization;
+
+class ThousandDaysAfterBirth
+{
+    static void Main(string[] args)
+    {
+
+        string date = Console.ReadLine();
+        string format = "dd-MM-yyyy";
+        CultureInfo provider = CultureInfo.InvariantCulture;
+        DateTime input = DateTime.ParseExact(date, "dd-MM-yyyy", CultureInfo.CurrentCulture);
+        input = input.AddDays(999);
+        string result = input.ToString(format);
+        Console.WriteLine(result);
+    }
+}
+
+
