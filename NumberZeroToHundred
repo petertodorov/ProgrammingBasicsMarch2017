@@ -1,0 +1,115 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+class NumberZeroToHundred
+{
+    static void Main(string[] args)
+    {
+        int n = int.Parse(Console.ReadLine());
+        if (n < 0 || n > 100)
+        {
+            Console.WriteLine("invalid number");
+        }
+        else if (n == 0)
+        {
+            Console.WriteLine("zero");
+        }
+        else if (n == 10)
+        {
+            Console.WriteLine("ten");
+        }
+        else if (n == 100)
+        {
+            Console.WriteLine("one hundred");
+        }
+        else if (n > 10 && n < 20)
+        {
+            CheckBetweenTenAndTwenty(n);
+        }
+        else
+        {
+            int[] keyEnterFirst = new int[8] { 2, 3, 4, 5, 6, 7, 8, 9 };
+            string[] valueEnterfirstDigit = new string[8] { "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety" };
+            int[] keyEnterLast = new int[9] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            string[] valueEnterLastDigit = new string[9] { "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+            Dictionary<int, string> firstDigit = new Dictionary<int, string>();
+            for (int i = 0; i < keyEnterFirst.Length; i++)
+            {
+                firstDigit.Add(keyEnterFirst[i], valueEnterfirstDigit[i]);
+            }
+            foreach (var item in firstDigit)
+            {
+                int tocheck = n / 10;
+                if (tocheck == item.Key)
+                {
+                    Console.Write(item.Value);
+                }
+            }
+            Dictionary<int, string> lastDigit = new Dictionary<int, string>();
+            for (int i = 0; i < keyEnterLast.Length; i++)
+            {
+                lastDigit.Add(keyEnterLast[i], valueEnterLastDigit[i]);
+            }
+
+            foreach (var item in lastDigit)
+            {
+                if (n > 10 && n % 10 == item.Key)
+                {
+                    Console.WriteLine(" " + item.Value);
+                }
+                else if (n < 10 && n % 10 == item.Key)
+                {
+                    Console.WriteLine(item.Value);
+                }
+            }
+        }
+    }
+    private static void CheckBetweenTenAndTwenty(int n)
+    {
+        switch (n)
+        {
+            case 11:
+                {
+                    Console.WriteLine("eleven");
+                }
+                break;
+            case 12:
+                {
+                    Console.WriteLine("twelve");
+                }
+                break;
+            case 13:
+                {
+                    Console.WriteLine("thirteen");
+                }
+                break;
+            case 14:
+                {
+                    Console.WriteLine("fourteen");
+                }
+                break;
+            case 15:
+                {
+                    Console.WriteLine("fifteen");
+                }
+                break;
+            case 16:
+                {
+                    Console.WriteLine("seventeen");
+                }
+                break;
+            case 18:
+                {
+                    Console.WriteLine("eighteen");
+                }
+                break;
+            case 19:
+                {
+                    Console.WriteLine("nineteen");
+                }
+                break;
+        }
+    }
+}
