@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Globalization;
+class SumSeconds
+{
+    static void Main(string[] args)
+    {
+        int[] input = new int[3];
+        for (int i = 0; i < input.Length; i++)
+        {
+            input[i] = int.Parse(Console.ReadLine());
+        }
+        int sum = input.Sum();
+        int minutes = sum / 60;
+        Console.Write($"{minutes}");
+        decimal seconds = sum % 60;
+        if (seconds <= 9)
+        {
+            Console.WriteLine($":0{seconds}");
+        }
+        else
+        {
+            Console.WriteLine($":{seconds}");
+        }
+    }
+}
