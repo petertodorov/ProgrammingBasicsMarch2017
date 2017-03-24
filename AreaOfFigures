@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+class AreaOfFigures
+{
+    static void Main(string[] args)
+    {
+        string input =Console.ReadLine();
+        double result = new double();
+        if (input =="square")
+        {
+            double first = double.Parse(Console.ReadLine());
+            result = first * first;
+        }
+        else if (input=="rectangle")
+        {
+            double firstRect = double.Parse(Console.ReadLine());
+            double secRect = double.Parse(Console.ReadLine());
+            result = firstRect * secRect;
+        }
+       else if (input == "circle")
+        {
+            double circle= double.Parse(Console.ReadLine());
+            result = Math.Pow(circle,2D) * Math.PI;
+        }
+        else if (input == "triangle")
+        {
+            double firstTriangle = double.Parse(Console.ReadLine());
+            double secTriangle = double.Parse(Console.ReadLine());
+            result =(firstTriangle*secTriangle)/2D;
+        }
+        Console.WriteLine("{0:0.000}",result);
+    }
+}
