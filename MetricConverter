@@ -26,6 +26,7 @@ class MetricConverter
         {
             inputNumber = inputNumber / 0.001M;
             inputUnit = "m";
+            
         }
         else if (inputUnit == "ft")
         {
