@@ -1,0 +1,87 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+class MetricConverter
+{
+    static void Main(string[] args)
+    {
+        decimal inputNumber = decimal.Parse(Console.ReadLine());
+        string inputUnit = Console.ReadLine();
+        string outputtUnit = Console.ReadLine();
+        decimal result = new decimal();
+        if (inputUnit == "mm")
+        {
+            inputNumber = inputNumber / 1000M;
+            inputUnit = "m";
+        }
+        else if (inputUnit == "in")
+        {
+            inputNumber = inputNumber / 39.3700787M;
+            inputUnit = "m";
+        }
+        else if (inputUnit == "km")
+        {
+            inputNumber = inputNumber / 0.001M;
+            inputUnit = "m";
+        }
+        else if (inputUnit == "ft")
+        {
+            inputNumber = inputNumber / 3.2808399M;
+            inputUnit = "m";
+        }
+        else if (inputUnit == "yd")
+        {
+            inputNumber = inputNumber / 1.0936133M;
+            inputUnit = "m";
+        }
+        else if (inputUnit == "mi")
+        {
+            inputNumber = inputNumber / 0.000621371192M;
+            inputUnit = "m";
+        }
+        else if (inputUnit == "cm")
+        {
+            inputNumber = inputNumber / 100M;
+            inputUnit = "m";
+        }
+        if (inputUnit == "m")
+        {
+            if (outputtUnit == "mm")
+            {
+                result = inputNumber * 1000M;
+            }
+            else if (outputtUnit == "m")
+            {
+                result = inputNumber * 1M;
+            }
+            else if (outputtUnit == "in")
+            {
+                result = inputNumber * 39.3700787M;
+            }
+            else if (outputtUnit == "km")
+            {
+                result = inputNumber * 0.001M;
+            }
+            else if (outputtUnit == "ft")
+            {
+                result = inputNumber * 3.2808399M;
+            }
+            else if (outputtUnit == "yd")
+            {
+                result = inputNumber * 1.0936133M;
+            }
+            else if (outputtUnit == "mi")
+            {
+                result = inputNumber * 0.000621371192M;
+            }
+            else if (outputtUnit == "cm")
+            {
+                result = inputNumber * 100M;
+            }
+        }
+        Console.WriteLine($"{result} {outputtUnit}");
+    }
+}
