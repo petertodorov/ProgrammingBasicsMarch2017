@@ -1,0 +1,92 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+class TradeComissions
+{
+    static void Main(string[] args)
+    {
+        string city = Console.ReadLine().ToLower();
+        decimal sales = decimal.Parse(Console.ReadLine());
+        decimal commision = 0;
+        if (sales>=0 && sales<=500)
+        {
+            if (city =="sofia")
+            {
+                commision = (sales * 5M) / 100M;
+            }
+            else if (city=="varna")
+            {
+                commision = (sales * 4.5M) / 100M;
+
+            }
+            else if (city == "plovdiv")
+            {
+                commision = (sales * 5.5M) / 100M;
+
+            }
+        }
+        else if (sales >500 && sales <= 1000)
+        {
+            if (city == "sofia")
+            {
+                commision = (sales * 7M) / 100M;
+            }
+            else if (city == "varna")
+            {
+                commision = (sales * 7.5M) / 100M;
+
+            }
+            else if (city == "plovdiv")
+            {
+                commision = (sales * 8M) / 100M;
+
+            }
+        }
+        else if(sales >1000 && sales <= 10000)
+        {
+            if (city == "sofia")
+            {
+                commision = (sales * 8M) / 100M;
+            }
+            else if (city == "varna")
+            {
+                commision = (sales * 10M) / 100M;
+
+            }
+            else if (city == "plovdiv")
+            {
+                commision = (sales * 12M) / 100M;
+
+            }
+        }
+        else if (sales> 10000)
+        {
+            if (city == "sofia")
+            {
+                commision = (sales * 12M) / 100M;
+            }
+            else if (city == "varna")
+            {
+                commision = (sales * 13M) / 100M;
+
+            }
+            else if (city == "plovdiv")
+            {
+                commision = (sales * 14.5M) / 100M;
+
+            }
+        }
+        if (commision>0)
+        {
+            Console.WriteLine($"{commision:F2}");
+
+        }
+        else
+        {
+            Console.WriteLine("error");
+        }
+    }
+}
+
