@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+class Cinema
+{
+    static void Main(string[] args)
+    {
+        string typeProjection = Console.ReadLine();
+        int rows = int.Parse(Console.ReadLine());
+        int cols = int.Parse(Console.ReadLine());
+        int seats = rows * cols;
+        decimal result = new decimal();
+        switch (typeProjection)
+        {
+            case "Premiere":
+                {
+                    result = seats * 12M;
+                    break;
+                }
+            case "Normal":
+                {
+                    result = seats * 7.5M;
+                    break;
+                }
+            case "Discount":
+                {
+                    result = seats * 5M;
+                    break;
+                }
+        }
+        Console.WriteLine($"{result:F2}");
+    }
+}
