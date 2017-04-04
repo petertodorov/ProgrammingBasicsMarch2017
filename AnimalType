@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+class AnimalType
+{
+    static void Main(string[] args)
+    {
+        string input = Console.ReadLine().ToLower();
+        string [] reptiles = new string[] { "crocodile", "tortoise", "snake"};
+        if (input =="dog")
+        {
+            Console.WriteLine("Mammal");
+        }
+        else if (reptiles.Contains(input))
+        {
+            Console.WriteLine("Reptile");
+        }
+        else
+        {
+            Console.WriteLine("Unknown");
+        }
+    }
+}
