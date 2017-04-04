@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+class DayOfWeek
+{
+    static void Main(string[] args)
+    {
+        Dictionary<int, string> daysOfWeek = new Dictionary<int, string>();
+        daysOfWeek.Add(1,"Monday");
+        daysOfWeek.Add(2, "Tuesday");
+        daysOfWeek.Add(3, "Wednesday");
+        daysOfWeek.Add(4, "Thursday");
+        daysOfWeek.Add(5, "Friday");
+        daysOfWeek.Add(6, "Saturday");
+        daysOfWeek.Add(7, "Sunday");
+        int day = int.Parse(Console.ReadLine());
+        if (day<1 || day>7) 
+        {
+            Console.WriteLine("error");
+        }
+        foreach (var item in daysOfWeek)
+        {
+            if (item.Key==day)
+            {
+                Console.WriteLine(item.Value); 
+            }
+        }       
+    }
+}
